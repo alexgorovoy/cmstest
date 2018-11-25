@@ -1,0 +1,17 @@
+.app {
+ 
+
+}
+
+.app .nav-link.active {
+  font-weight: 600;
+}
+
+.app-logo {
+  width: 100px;
+  height: 45px;
+}
+
+.app-main {
+  padding: 1rem;
+}
