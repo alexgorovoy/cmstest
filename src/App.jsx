@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route } from 'react-router-dom';
 import Nav from 'react-bootstrap/lib/Nav';
 import Navbar from 'react-bootstrap/lib/Navbar';
+import { LinkContainer } from 'react-router-bootstrap';
 
 import Faq from "./pages/faq/Faq";
 import Home from "./pages/home/Home";
@@ -17,19 +18,25 @@ class App extends Component {
         <div className="app">
         
           <Navbar bg="dark" variant="dark">
-            <Navbar.Brand href="/">
-              <img
-                alt="logo"
-                src={logo}              
-                className="app-logo d-inline-block"
-              />
-            </Navbar.Brand>
+            <LinkContainer to="/">
+              <Navbar.Brand>
+                <img
+                  alt="logo"
+                  src={logo}              
+                  className="app-logo d-inline-block"
+                />
+              </Navbar.Brand>
+            </LinkContainer>
             <Nav activeKey={activeRoute} defaultActiveKey="/" onSelect={(eventKey) => console.log('Selected:', eventKey)}>
               <Nav.Item>
-                <Nav.Link eventKey="/" href="/">Home</Nav.Link>
+                <LinkContainer to="/">
+                  <Nav.Link>Home</Nav.Link>
+                </LinkContainer>
               </Nav.Item>
               <Nav.Item>
-                <Nav.Link eventKey="/faqs" href="/faqs">FAQs</Nav.Link>          
+                <LinkContainer to="/faqs">
+                  <Nav.Link>FAQs</Nav.Link>
+                </LinkContainer>
               </Nav.Item>
             </Nav>
           </Navbar>

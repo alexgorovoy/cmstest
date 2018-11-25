@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article / renders as expected 1`] = `
+Array [
+  <h2>
+    test title
+  </h2>,
+  <p
+    dangerouslySetInnerHTML={
+      Object {
+        "__html": "test body <p>with tags</p>",
+      }
+    }
+  />,
+]
+`;

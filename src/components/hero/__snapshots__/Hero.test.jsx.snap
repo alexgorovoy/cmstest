@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero / renders as expected 1`] = `
+<div
+  className="hero"
+  style={
+    Object {
+      "backgroundImage": "url(https://drive.google.com/uc?id=1svw9VdyX4fyRHd1kggq0akDSafmdOS7L)",
+    }
+  }
+>
+  <div
+    className="hero-text"
+  >
+    <h1>
+      Test
+    </h1>
+    <h4>
+      subheading test
+    </h4>
+  </div>
+</div>
+`;

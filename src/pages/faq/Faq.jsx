@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/lib/Col';
 import ListGroup from 'react-bootstrap/lib/ListGroup';
 
 import { onFAQLoad, setFAQActiveArticle } from '../../redux/actions/Actions';
+import Article from '../../components/article/Article';
 import './Faq.css';
 
 class Faq extends Component {
@@ -19,18 +20,9 @@ class Faq extends Component {
     return articles.map(a => a.title);
   }
 
-  setHTML(content) { 
-    return { __html: content };
-  }
-
   getSelectedArticle(articles, activeArticleIndex) {
     const article = articles[activeArticleIndex];
-    return activeArticleIndex !== null ? (
-      <React.Fragment>
-        <h2>{article.title}</h2>
-        <p dangerouslySetInnerHTML={this.setHTML(article.body)} />
-      </React.Fragment>
-    ) : <h5>Please select article...</h5>;
+    return activeArticleIndex !== null && article ? <Article article={article} /> : <h5>Please select article...</h5>;
   }
 
   selectActiveArticle(index) {
@@ -46,9 +38,13 @@ class Faq extends Component {
         <Row>
           <Col sm={8} className="faq-content">{this.getSelectedArticle(articles, activeArticleIndex)}</Col>
           <Col sm={4}>
-            <ListGroup >                    
+            <ListGroup>
               {titles.map((title, index) => {
-                return (<ListGroup.Item onClick={() => this.selectActiveArticle(index)} action key={index} active={index === activeArticleIndex}>
+                return (<ListGroup.Item
+                          onClick={() => this.selectActiveArticle(index)}
+                          action
+                          key={index}
+                          active={index === activeArticleIndex}>
                           {title}
                         </ListGroup.Item>
                 );
