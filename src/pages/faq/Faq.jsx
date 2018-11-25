@@ -12,7 +12,7 @@ import './Faq.css';
 
 class Faq extends Component {
   componentDidMount() {
-    const { onLoad } = this.props;
+    const { onLoad } = this.props;    
     onLoad();
   }
 

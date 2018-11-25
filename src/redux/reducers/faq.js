@@ -10,8 +10,8 @@ const faq = (state = initialState, action) => {
     case FAQ.SET_MODEL: {
         const { articles } = action.payload;
         return {
-            articles,
-            activeArticleIndex: null
+            ...state,
+            articles            
         };
     }
     case FAQ.SET_ACTIVE_ARTICLE: {
